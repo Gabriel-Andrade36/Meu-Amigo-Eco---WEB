@@ -1,0 +1,29 @@
+
+
+.recomended-mission-container{
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Inconsolata', monospace;
+  margin:5px 0;
+
+  background-color: #F2F2F0;
+  background-color:#37E688;
+  background-color: #3FD987;
+  border-radius: 10px;
+  .mission{
+
+    &__content{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__description{
+
+    }
+    &__xp-value{
+
+    }
+    &__add-button{
+
+    }
+  }
+}
