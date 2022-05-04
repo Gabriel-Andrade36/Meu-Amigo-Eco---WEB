@@ -9,25 +9,29 @@
 *{
   margin: 0;
   padding:0;
-  color: #fff;
+  color: black;
 
+  font-family: 'Inconsolata', monospace;
 }
+
 html{
   // background-color: #bdffc9;
-  background-color:#3AF08F;
+
   background-color:rgb(255, 255, 255);
 
 }
 
 .container-template{
   background-color: rgb(255, 255, 255);
-  background-color:#37E688;
+
+  // background-color:#37E688;
   // border: 1px solid #009245;
-  width: 800px;
+  box-shadow: 1px 1px 4px rgb(202, 202, 202);
+  width: 900px;
   max-width: 90vw;
-  border-radius: 10px;
+  border-radius: 5px;
 
   margin:10px;
-  padding: 10px;
+  padding: 30px 20px 7px;
 }
 
