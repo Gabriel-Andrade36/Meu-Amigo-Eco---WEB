@@ -4,36 +4,19 @@
 // backkground-color: #3FD987;
 // backkground-color: #3AF08F;
 // backkground-color: #37E688;
-
-h2{
-  margin-bottom:30px;
-}
-
-h3{
-color:#2db16b ;
-  margin: 3px 0 0px;
-}
-
 .recomended-mission{
-
   font-size: 18px;
   font-weight: 300;
   font-family: 'Inconsolata', monospace;
-  margin:15px 0 0;
-
-  border:1px solid #3fd98788;
-
   padding: 5px 10px 0;
-
+  margin:15px 0 0;
+  border:1px solid #3fd98788;
   border-radius: 4px;
-
   .mission{
-
     &__content{
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       padding:0 0 10px;
     }
     &__description{
@@ -65,11 +48,9 @@ color:#2db16b ;
       &:hover{
         background-color: #3FD987;
         color: white;
-
         transition: all 0.3s;
         cursor: pointer;
       }
     }
-
   }
 }

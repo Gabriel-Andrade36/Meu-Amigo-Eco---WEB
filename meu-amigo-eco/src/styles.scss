@@ -1,17 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
-
 // cores
 // #009245
 // #3AF08F
 // #3FD987
 // #3AF08F
 // #37E688
+
 *{
   margin: 0;
   padding:0;
   color: black;
 
   font-family: 'Inconsolata', monospace;
+}
+
+html{
+  background-color:rgb(255, 255, 255);
+
 }
 
 h2{
@@ -23,20 +27,10 @@ color:#2db16b ;
   margin: 3px 0 0px;
 }
 
-html{
-  // background-color: #bdffc9;
-
-  background-color:rgb(255, 255, 255);
-
-}
-
 .container-template{
   background-color: rgb(255, 255, 255);
 
-  // background-color:#37E688;
-  // border: 1px solid #009245;
-  box-shadow: 1px 1px 4px rgb(202, 202, 202);
-  width: 900px;
+  box-shadow: 1px 1px 5px rgb(146, 146, 146);
   max-width: 90vw;
   border-radius: 5px;
 
@@ -44,3 +38,33 @@ html{
   padding: 20px;
 }
 
+.container-size{
+  width: 900px;
+}
+
+.card-size{
+  width: 300px;
+}
+
+button{
+  font-family: 'Inconsolata', monospace;
+  border: 2px solid #3FD987;
+  border-radius: 7px;
+  background-color: #fff;
+  color: #3FD987;
+  font-size: 30px;
+  font-weight: 600;
+
+  &:hover{
+    background-color: #3FD987;
+    color: white;
+
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
+
+.big-button{
+  width: 300px;
+  height: 60px;
+}
