@@ -48,16 +48,16 @@ color:#2db16b ;
 
 button{
   font-family: 'Inconsolata', monospace;
-  border: 2px solid #3FD987;
+  border: none;
   border-radius: 7px;
-  background-color: #fff;
-  color: #3FD987;
   font-size: 30px;
   font-weight: 600;
+  background-color: #3FD987;
+  color: white;
 
   &:hover{
-    background-color: #3FD987;
-    color: white;
+    background-color:  #009245;
+    color: #fff;
 
     transition: all 0.3s;
     cursor: pointer;
