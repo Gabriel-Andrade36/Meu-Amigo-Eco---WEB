@@ -5,9 +5,12 @@ import { HeaderComponent } from './header/header.component';
 import { UserContainerComponent } from './header/user-container/user-container.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddActivityComponent } from './components/add-activity/add-activity.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,12 @@ import { AppComponent } from './app.component';
     RecomendedMissionsComponent,
     EcoQuizComponent,
     LearnWithEcoComponent,
+    AddActivityComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
