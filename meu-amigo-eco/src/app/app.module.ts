@@ -6,12 +6,10 @@ import { UserContainerComponent } from './header/user-container/user-container.c
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { FormsModule, NgModel } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddActivityComponent } from './components/add-activity/add-activity.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +19,14 @@ import { AddActivityComponent } from './components/add-activity/add-activity.com
     EcoQuizComponent,
     LearnWithEcoComponent,
     AddActivityComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

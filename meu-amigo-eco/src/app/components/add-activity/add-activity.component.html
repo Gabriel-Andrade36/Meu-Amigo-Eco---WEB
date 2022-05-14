@@ -4,8 +4,23 @@
     placeholder="{{ placeholder_text }}"
     (mouseenter)="onPlaceholderHover()"
     (mouseleave)="onPlaceholderHover()"
+    [(ngModel)]="ActivityTextValue"
   ></textarea>
-  <div class="recent-activities">
-    <a> Atividades recentes \/ </a>
+
+  <div class="buttons-container">
+    <div class="recent-activies-container">
+      <div
+        class="recent-activies-historic"
+        *ngIf="isActiviesHistoricOpen === true"
+      >
+        <p *ngFor="let item of activiesList">
+          descrição:{{ item.activity }} created:{{ item.created }}
+        </p>
+      </div>
+      <div class="recent-activities-button" (click)="onActiviesButton()">
+        <a> {{ activiesButtonText }} </a>
+      </div>
+    </div>
+    <button (click)="createActivity()">ADICIONAR</button>
   </div>
 </div>
