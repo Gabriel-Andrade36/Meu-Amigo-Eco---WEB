@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "meu-amigo-eco"
+  },
+  "targets": {
+    "meu-amigo-eco": {
+      "hosting": {
+        "meu-amigo-eco": [
+          "meu-amigo-eco"
+        ]
+      }
+    }
   }
 }
