@@ -39,24 +39,17 @@ export class AddActivityComponent implements OnInit {
     {nome:'c',created:"num sei"}
   ];
 
+  
   constructor(private activityService: ActivityService) {
 
   }
 
   ngOnInit(): void {
-    // const  app = initializeApp(firebaseConfig);
-    // db = getFirestore(app);
 
   }
 
   async createActivity(){
-    // try {
-    //   const docRef = await addDoc(collection(db, "added-activity"), {
-    //     description: this.ActivityTextValue, created: Timestamp.fromDate(new Date())
-    //   });
-    // } catch (e) {
-    //   console.error("Error adding document: ", e);
-    // }
+
     alert("Activity Added")
   }
 
@@ -79,24 +72,5 @@ export class AddActivityComponent implements OnInit {
       this.activiesButtonText = "atividades recentes \\/"
     }
   }
-
-  // async testing(){
-  //   // const docRef = doc(db, "added-activity");
-  //   // const docSnap = await getDoc(docRef);
-
-  //   const q = query(collection(db, "added-activity"))
-
-  //   const querySnapshot = await getDocs(q);
-  //   querySnapshot.forEach((doc) => {
-  //   console.log(doc.id, " => ", doc.data());
-  // });
-
-  //   // if (docSnap.exists()) {
-  //   //   console.log("Document data:", docSnap.data());
-  //   // } else {
-  //   //   // doc.data() will be undefined in this case
-  //   //   alert("No such document!");
-  //   // }
-  // }
 
 }
