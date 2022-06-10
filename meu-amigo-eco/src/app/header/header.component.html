@@ -1,4 +1,14 @@
 <div class="header">
-  <app-user-container></app-user-container>
-  <p>header works!</p>
+  <div class="brand-container" routerLink="/home">
+    <img src="../../assets/meu-amigo-eco-icon.png" width="140px" alt="">
+  </div>
+  <div class="user-container">
+    <ng-container *ngIf="user$ | async as user; else loginLogout ">
+      <app-user-container></app-user-container>
+    </ng-container>
+
+    <ng-template #loginLogout>
+      <app-login-logout></app-login-logout>
+    </ng-template>
+  </div>
 </div>

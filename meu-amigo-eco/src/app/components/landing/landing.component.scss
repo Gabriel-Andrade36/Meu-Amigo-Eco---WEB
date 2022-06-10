@@ -1,0 +1,24 @@
+.body-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
+}
+
+.learn-area{
+  box-sizing: border-box;
+  background-color: #012346;
+  background-image: url(../../../assets/backgrounds/stacked-peaks-green.svg);
+  width: 100vw;
+  height: 650px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding:0 100px;
+}
+
+.character{
+  width: 550px;
+  padding: 0 10px;
+}

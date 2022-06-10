@@ -1,13 +1,35 @@
-<div class="container-template container-size">
-  <h2>Missões recomendadas</h2>
-  <div class="recomended-mission" *ngFor="let item of [0, 0, 0]">
-    <h3>Missão 1</h3>
-    <div class="mission__content">
-      <p class="mission__description">
-        Jogue o lixo nas latas reciclaveis corretas
-      </p>
-      <p class="mission__xp-value">30xp</p>
-      <a class="mission__add-button">+</a>
+<div class="background">
+  <img src="../../../assets/fun-icons/handy-yellow-paper-airplane.png" alt="" class="decoration1">
+  <img src="../../../assets/fun-icons/handy-yellow-paper-airplane.png" alt="" class="decoration2">
+  <img src="../../../assets/fun-icons/handy-yellow-paper-airplane.png" alt="" class="decoration3">
+  <img src="../../../assets/fun-icons/handy-yellow-paper-airplane.png" alt="" class="decoration4">
+  <img src="../../../assets/fun-icons/handy-yellow-paper-airplane.png" alt="" class="decoration5">
+
+  <div class="content">
+    <div class="recomended-missions-container" *ngIf="user$ | async as user">
+      <h2>Missões recomendadas</h2>
+      <div *ngIf="recomendedActivities.length != 0; else noRecomendedActivities">
+        <div *ngFor="let item of recomendedActivities; let i = index">
+          <div class="recomended-mission" *ngIf="i <= 2">
+            <h3>{{item.title}}</h3>
+            <div class="mission__content">
+              <p class="mission__description">
+                {{item.description}}
+              </p>
+              <p class="xp">{{item.xp}}xp</p>
+              <a class="mission__add-button" (click)="saveMissionOnProfile(user, item)">+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="alert">Realize estas atividades fora do computador e depois adicione-as para ganhar pontos!</p>
+
+      <ng-template #noRecomendedActivities>
+        <p>Parabéns, você completou todas as atividades recomedadas! volte mais tarde para realizar novas
+          atividades</p>
+      </ng-template>
     </div>
+
+    <img src="../../../assets/characters/handy-joyful-earth.png" class="earth-character" alt="">
   </div>
 </div>

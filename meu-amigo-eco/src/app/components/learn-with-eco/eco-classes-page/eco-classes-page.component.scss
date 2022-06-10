@@ -1,0 +1,275 @@
+.eco-classes-container{
+  display: flex;
+  flex-direction: column;
+
+  max-width: 100vw;
+  height: fit-content;
+  position: relative;
+
+.classes-presentation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../../../assets/backgrounds/stacked-peaks-green.svg);
+  max-width: 100%;
+  min-height: 650px;
+
+  .text-container{
+    text-align: center;
+    .title{
+      font-size: 35px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow:1px 1px 3px #095f312a;
+    }
+    .text{
+      font-size: 18px;
+      font-weight: 300;
+      color: #fff;
+    }
+    max-width:700px;
+  }
+
+}
+
+.classes{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100vw;
+  padding: 150px 50px;
+  height: fit-content;
+  justify-content: flex-start;
+  align-items: center;
+
+  .class-content{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    min-width: 370px;
+    cursor: pointer;
+    // background-color:#16d67056;
+    // background-color:#3FD987;
+    background-color: rgba(255, 255, 255, 0.082);
+    min-height: 450px;
+    margin: 10px 20px;
+    box-shadow: 2px 2px 15px rgba(172, 172, 172, 0.795);
+    border-radius: 10px;
+
+    &:hover{
+      margin:5px 20px 15px;
+    }
+
+    img{
+      margin: 0 auto;
+      width: 200px;
+    }
+    .class-title{
+      text-align: center;
+      font-size:25px;
+      padding: 15px 5px;
+      text-transform: uppercase;
+      // color: #fff;
+      color: #3FD987;
+      max-width: fit-content;
+    }
+
+    .description{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      .class-description{
+        margin: auto;
+        width: 270px;
+        height: fit-content;
+        font-size:18px;
+        text-align: center;
+        color: rgb(58, 58, 58)
+      }
+
+    }
+    .xp{
+      display: flex;
+      position:absolute;
+      right: 10px;
+      top:10px;
+    }
+  }
+  .ghost-class-container{
+    min-width: 420px;
+    min-height: 0;
+    margin: 15px;
+  }
+}
+
+  .paper-airplane{
+    width: 100px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+  }
+  .paper-decoration1{
+    width: 100px;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+  }
+  .paper-decoration2{
+    width: 60px;
+    position: absolute;
+    top: 160px;
+    right: 40px;
+  }
+  .paper-decoration3{
+    width: 60px;
+    position: absolute;
+    top: 150px;
+    right: 60px;
+  }
+  .floor-paper-decoration{
+    width: 100px;
+    position: absolute;
+    bottom: 0px;
+    right: 240px;
+  }
+
+  .selected-class-container{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 15px rgba(172, 172, 172, 0.795);
+    margin: 150px auto 150px;
+    width: 1200px;
+    height: 500px;
+    position: relative;
+    border-radius: 15px;
+
+    .in-class-container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+
+      .title{
+        text-transform: capitalize;
+        color: #3FD987;
+        margin: 10px auto;
+        width: fit-content;
+      }
+
+      .header-content{
+        display: flex;
+        position: absolute;
+      justify-content: center;
+      align-items: center;
+      top:10px;
+      right:15px;
+
+      button{
+        padding: 0;
+        background-color:rgba(255, 255, 255, 0);
+        color: rgb(228, 37, 37);
+        width: fit-content;
+      }
+    }
+
+    .content{
+      // (click)="InOutClass(item.id)"
+      font-size: 20px;
+      text-align: center;
+
+      .left-character{
+
+        position: absolute;
+        width: 200px;
+        bottom: 20px;
+        left:20px
+      }
+    }
+    // [ngClass]="{'disable-xp': item.status === true}"
+    .buttons-container{
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+
+      .buttons{
+        display: flex;
+        width: fit-content;
+        justify-content: space-between;
+        margin:15px;
+
+        button{
+          margin:5px;
+        }
+      }
+    }
+  }
+
+
+  }
+  .completed-class-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+
+    .congrats-text{
+      font-size: 30px;
+      margin: 0 20px;
+      font-weight: 600;
+      text-transform: capitalize;
+      color: #3FD987;
+    }
+
+    .confetti-gif{
+      width: 200px;
+      position: absolute;
+      bottom: 0;
+      margin: 0 auto;
+      z-index: -1;
+    }
+
+    .handi-confetti-yellow{
+      position: absolute;
+      width: 200px;
+      left: 10px;
+      top:10px;
+    }
+
+    .handi-confetti-red{
+      position: absolute;
+      width: 200px;
+      right: 10px;
+      top:10px;
+    }
+
+    .xp-earned{
+      margin: 10px 0 0;
+      font-size: 20px;
+    }
+
+    .cloud-gif{
+      width: 240px;
+    }
+
+    .star-thumbsup{
+      position: absolute;
+      width: 130px;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    button{
+      margin:60px 0 0;
+    }
+  }
+}

@@ -1,3 +1,6 @@
+import { UsersService } from './../../services/users.service';
+import { Router } from '@angular/router';
+import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserContainerComponent implements OnInit {
 
-  constructor() { }
+  user$ = this.usersService.currentUserProfile$;
+
+  constructor(private authService: AuthenticationService, private route: Router, private usersService: UsersService) { }
 
   ngOnInit(): void {
   }
 
+  logout(){
+    this.authService.logout().subscribe(()=>{
+      this.route.navigate([''])
+    });
+  }
 }

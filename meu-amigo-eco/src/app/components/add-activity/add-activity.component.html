@@ -1,26 +1,55 @@
-<div class="container-template container-size">
-  <h2>Adicione uma atividade realizada!</h2>
-  <textarea
-    placeholder="{{ placeholder_text }}"
-    (mouseenter)="onPlaceholderHover()"
-    (mouseleave)="onPlaceholderHover()"
-    [(ngModel)]="ActivityTextValue"
-  ></textarea>
-
-  <div class="buttons-container">
-    <div class="recent-activies-container">
-      <div
-        class="recent-activies-historic"
-        *ngIf="isActiviesHistoricOpen === true"
-      >
-        <p *ngFor="let item of activiesList">
-          descrição:{{ item.activity }} created:{{ item.created }}
-        </p>
-      </div>
-      <div class="recent-activities-button" (click)="onActiviesButton()">
-        <a> {{ activiesButtonText }} </a>
+<div class="background" *ngIf="userProfile$ | async as user">
+  <div class="content">
+    <div class="recent-activities-container">
+      <div class="activities-container">
+        <div class="buttonUpDown" *ngIf="onActivities >= 4">
+          <i class="bi bi-caret-up-fill" (click)="previousActivities()"></i>
+        </div>
+        <div class="activities">
+          <ul *ngFor="let item of activities.slice(onActivities,onActivities+4); let i = index">
+            <li>
+              <div class="activity-description">
+                <div class="description-container">
+                  <div class="activity-description-header">
+                    <h4>{{ item.title }}</h4>
+                    <div class="delete-activity" (click)="deleteActivity(user, i, item.xp)">
+                      <p *ngIf="item.isRecomended" class="recomended">recomendada</p>
+                      <i class="bi bi-trash"></i>
+                    </div>
+                  </div>
+                  <p>{{ item.description }}</p>
+                </div>
+                <div class="time">
+                  <p>{{ item.created }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="buttonUpDown" *ngIf="onActivities < activities.length-4">
+          <i class="bi bi-caret-down-fill" (click)="nextActivities()"></i>
+        </div>
       </div>
     </div>
-    <button (click)="createActivity()">ADICIONAR</button>
+
+    <div class="form-container">
+      <h2>Adicione uma atividade realizada!</h2>
+      <form (ngSubmit)="onSubmit(user)">
+        <input class="input-style" [(ngModel)]="activity.title" type="text" name="title" placeholder="Titulo" />
+
+        <textarea class="input-style" placeholder="Descrição da atividade" [(ngModel)]="activity.description"
+          name="description">
+        </textarea>
+
+        <div class="buttons-container">
+          <button class="button default-button-size" type="submit" [ngClass]="{
+          'button-disable': activity.title === '' || activity.description === ''
+          }">
+            ADICIONAR
+          </button>
+        </div>
+      </form>
+    </div>
+
   </div>
 </div>

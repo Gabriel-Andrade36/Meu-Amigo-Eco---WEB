@@ -1,1 +1,23 @@
-<p>user-container works!</p>
+<div *ngIf="user$ | async as user" class="user-container">
+
+  <div class="left-content">
+    <img class="profile-img-toolbar"
+      [src]="user.photoURL ?? '../../../assets/profile-picture-icons/profile-planet.svg'">
+  </div>
+  <div class="right-content">
+    <div class="options">
+      <div class="username">
+        <p class="username-text">{{user.displayName}}</p>
+      </div>
+      <div class="edit">
+        <i class="bi bi-pencil" routerLink="/perfil"></i>
+      </div>
+      <div class="logout">
+        <i class="bi bi-box-arrow-right" (click)="logout()"></i>
+      </div>
+    </div>
+    <span class="experience">
+      {{user.exp}}xp
+    </span>
+  </div>
+</div>

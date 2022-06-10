@@ -1,0 +1,82 @@
+<div class="eco-classes-container">
+  <ng-container *ngIf="!onAClass; else onClass">
+    <div class="classes-presentation">
+      <div class="text-container">
+        <h2 class="title">Desenvolva seu pensamento ecológico com nossas aulas!</h2>
+        <p class="text">Fazendo nossas eco-aulas você desenvolve seu pensamento ecológico, ganha pontos, ganha
+          inspiração
+          para poder
+          realizar novas atividades em prol do meio ambiente e ainda por cima ganha pontos de experiência para subir de
+          nível</p>
+      </div>
+
+    </div>
+
+    <div class="classes">
+      <div class="class-content" *ngFor="let item of classes; let i = index" (click)="InOutClass(item.id)">
+        <img src="{{ecoIcon[lastNumber(i)]}}">
+        <h3 class="class-title">{{item.title}}</h3>
+        <div class="description">
+          <p class="class-description">{{item.description}}</p>
+        </div>
+        <div class="xp" [ngClass]="{'disable-xp': item.status === true}">{{item.xp}}xp</div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #onClass>
+    <img src="../../../../assets/fun-icons/handy-yellow-paper-airplane.png" class="paper-airplane" alt="">
+    <img src="../../../../assets/fun-icons/handy-small-piece-of-paper-recipe.png" alt="" class="paper-decoration1">
+    <img src="../../../../assets/fun-icons/handy-small-piece-of-paper-recipe.png" alt="" class="paper-decoration2">
+    <img src="../../../../assets/fun-icons/handy-small-piece-of-paper-recipe.png" alt="" class="paper-decoration3">
+    <img src="../../../../assets/fun-icons/handy-paper-with-text.png" alt="" class="floor-paper-decoration">
+    <div class="selected-class-container">
+      <div class="in-class-container" *ngIf="onText < selectedClass.texts.length">
+
+        <div class="header">
+          <h1 class="title">{{selectedClass.title}} ({{(onText+1)+'/'+selectedClass.texts.length}})</h1>
+          <div class="header-content">
+            <button class="button default-button-size" (click)="InOutClass()">sair</button>
+          </div>
+        </div>
+        <div class="content">
+          <p>{{selectedClass.texts[onText]}}</p>
+          <img src="../../../../assets/characters/handy-joyful-loudspeaker-with-phone.png" class="left-character"
+            alt="">
+        </div>
+        <div class="buttons-container">
+          <div class="buttons">
+            <button class="button default-button-size" (click)="previousClass()" *ngIf="onText != 0">Voltar</button>
+            <button class="button default-button-size"
+              (click)="onText < selectedClass.texts.length-1 ? nextClass() : completeClass(selectedClass.xp, selectedClass.id)">
+              {{onText < selectedClass.texts.length-1 ? 'Próximo' : 'Concluir' }} </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="completed-class-container" *ngIf="onText >= selectedClass.texts.length">
+
+        <img class="handi-confetti-yellow" src="../../../../assets/decoration/handy-confetti-1.png">
+
+        <img class="handi-confetti-red" src="../../../../assets/decoration/handy-confetti.png">
+
+        <img src="../../../../assets/characters/gifs/handy-meditating-cloud.gif" class="cloud-gif" alt="">
+
+        <p class="congrats-text">Parabéns, você concluiu a eco-aula "{{selectedClass.title}}"</p>
+        <p class="xp-earned" *ngIf="!selectedClass.status">Você ganhou {{selectedClass.xp}} pontos de experiência!!!</p>
+        <p class="xp-earned" *ngIf="selectedClass.status">Está atividade já foi realizada, veja novas aulas para ganhar
+          mais pontos!!!</p>
+
+        <button class="button default-button-size" (click)="InOutClass()" *ngIf="onText != 0">Sair</button>
+
+        <img src="../../../../assets/decoration/gifs/handy-colorful-confetti.gif" alt="" class="confetti-gif">
+
+        <img src="../../../../assets/characters/handy-rating-star-gives-a-thumbs-up.png" class="star-thumbsup" alt="">
+
+      </div>
+    </div>
+
+
+
+  </ng-template>
+</div>
