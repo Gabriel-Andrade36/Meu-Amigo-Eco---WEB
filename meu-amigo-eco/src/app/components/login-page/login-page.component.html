@@ -1,0 +1,29 @@
+<div class="login-container">
+  <div class="container-template">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="title">
+        <h2>Faça Login!</h2>
+      </div>
+      <div class="input-container">
+        <input type="email" placeholder="Email" (click)="emailLeft = false" (blur)="emailLeft = true"
+          formControlName="email">
+        <p class="error-message" *ngIf="email?.errors?.['required'] && emailLeft">*Insira um email!</p>
+        <p class="error-message" *ngIf="email?.errors?.['email'] && emailLeft">*Insira um formato de email valido</p>
+      </div>
+      <div class="input-container">
+        <input type="password" placeholder="Senha" (click)="passwordLeft= false" (blur)="passwordLeft = true"
+          formControlName="password">
+        <p class="error-message" *ngIf="password?.errors?.['required'] && passwordLeft">*Insira a senha!</p>
+      </div>
+
+      <button class="button default-button-size" type="submit">
+        <p>
+          Entrar Em Sua Conta!
+        </p>
+      </button>
+      <div class="signin-call">
+        <p routerLink="/cadastrar">Não tem uma conta? Inscreva-se!</p>
+      </div>
+    </form>
+  </div>
+</div>

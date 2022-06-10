@@ -1,3 +1,5 @@
+import { UsersService } from './../services/users.service';
+import { AuthenticationService } from './../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  user$ = this.usersService.currentUserProfile$;
+  constructor(public authService: AuthenticationService, public usersService:UsersService) { }
 
   ngOnInit(): void {
   }

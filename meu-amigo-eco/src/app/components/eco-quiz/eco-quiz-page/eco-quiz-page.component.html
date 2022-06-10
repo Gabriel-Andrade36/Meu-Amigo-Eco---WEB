@@ -1,0 +1,81 @@
+<ng-container *ngIf="!onQuiz; else quiz">
+  <div class="eco-quiz-page" *ngIf="user$ | async as user">
+    <!-- ABOUT QUIZ -->
+    <div class="quiz-presentation">
+      ALGO SOBRE
+      <button class="button default-button-size" routerLink="/home">voltar</button>
+    </div>
+    <!-- AVAILABLE QUIZZES LIST -->
+    <div class="quizes-container">
+      <h2 class="quizes-header">Quizes disponíveis</h2>
+      <div class="quizes" *ngFor="let item of quizzes">
+        <div class="quiz" (click)="quizInOut(item.id)">
+          <div class="quiz-info">
+            <p class="xp" [ngClass]="{'disable-xp' : item.status === 'realizado'}">{{item.xp}}px</p>
+            <h3>{{item.title}}
+            </h3>
+          </div>
+          <div class="status">
+            <p class="status__questions">{{item.questions.length}} {{item.questions.length > 1?"perguntas":"pergunta"}}
+            </p>
+            <ng-container *ngIf="item.status; else notDone">
+              <div class="status-container">
+                <span class="status__text">status:</span>
+                <p class="status__done" *ngIf="item.status === 'realizado'">realizado</p>
+                <p class="status__wrong" *ngIf="item.status === 'errou'">incorreta</p>
+              </div>
+            </ng-container>
+            <ng-template #notDone>
+              <div class="status-container">
+                <span class="status__text">status:</span>
+                <p class="status__available">disponível</p>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #quiz>
+  <!-- QUIZ QUESTIONS -->
+  <ng-container *ngIf="user$ | async as user">
+    <ng-container *ngFor="let item of selectedQuiz.questions; let i = index">
+      <div class="onQuiz-container" *ngIf="onQuestion === i">
+        <h3>{{selectedQuiz.title}}</h3>
+        <div class="question-header">
+          <p>{{item.question}}</p>
+          <p>{{i+1}}/{{selectedQuiz.questions.length}}</p>
+        </div>
+        <div class="answers" *ngFor="let answer of item.answers; let answerIndex = index">
+          <div class="answer" [ngClass]="{
+            'answer-selected': onAnswer === answerIndex}" (click)="onAnswer = answerIndex">
+            {{answer}}
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="button default-button-size" (click)="quizInOut()">sair</button>
+          <button class="button default-button-size" (click)="nextQuestion(item.answer)" [ngClass]="{
+            'button-disable': onAnswer < 0}" *ngIf="onQuestion != selectedQuiz.questions.length-1">próxima
+          </button>
+          <button class="button default-button-size" (click)="endQuiz(item.answer, user)" [ngClass]="{
+            'button-disable': onAnswer < 0}" *ngIf="onQuestion === selectedQuiz.questions.length-1">Concluir</button>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+  <!-- WHEN QUIZ IS COMPLETED -->
+  <div class="quiz-concluded" *ngIf="onQuestion === selectedQuiz.questions.length">
+    <h2>{{gotItRight?'Parabéns, você acertou todas!':'Que pena, você errou, tente novamente mais tarde'}}</h2>
+    <h3 class="xpEarned" *ngIf="selectedQuiz.status ==='realizado'">
+      {{'Esta atividade já havia sido realizada, nenhum ponto adicionado :C'}}
+    </h3>
+
+    <h3>{{'Você ganhou ' +selectedQuiz.xp + ' pontos de experiência!!!'}}</h3>
+    <ng-container *ngFor="let item of feedback; let i=index">
+      <p *ngIf="!item">Questão {{(i+1)+'/'+feedback.length}}: "{{selectedQuiz.questions[i].question}}" incorreta!</p>
+    </ng-container>
+    <button class="button default-button-size" (click)="quizInOut()">voltar</button>
+  </div>
+
+</ng-template>

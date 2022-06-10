@@ -1,0 +1,25 @@
+[debug] [2022-05-12T01:19:24.289Z] ----------------------------------------------------------------------
+[debug] [2022-05-12T01:19:24.291Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Pichau\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-05-12T01:19:24.292Z] CLI Version:   9.23.0
+[debug] [2022-05-12T01:19:24.292Z] Platform:      win32
+[debug] [2022-05-12T01:19:24.292Z] Node Version:  v14.16.1
+[debug] [2022-05-12T01:19:24.293Z] Time:          Wed May 11 2022 22:19:24 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2022-05-12T01:19:24.293Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-12T01:19:24.382Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-12T01:19:24.382Z] > authorizing via signed-in user (gabrielndcorrea@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Pichau\Documents\WorkSpace-Repository\Projects\Meu-Amigo-Eco---WEB\meu-amigo-eco
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

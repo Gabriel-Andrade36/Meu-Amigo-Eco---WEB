@@ -1,0 +1,125 @@
+
+.dashboard-container{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .container-template{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:54px 0 0;
+    width: 350px;
+    padding:40px 50px 40px;
+
+    .profile-image{
+      margin: 15px 0 0;
+      position: relative;
+    }
+    .profile-image > img{
+      box-sizing: border-box;
+      border-radius: 100%;
+      object-fit: cover;
+      object-position: center;
+      border:3px solid #009245;
+      background-color: rgb(48, 48, 71);
+    }
+    .pencil-button{
+      display: flex;
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      justify-content: center;
+      align-items: center;
+      width: 55px;
+      height: 55px;
+      background-color: #3FD987;
+      border-radius: 100%;
+      &:hover{
+        background-color:  #009245;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      i{
+        color:#fff;
+        font-size: 30px;
+      }
+    }
+
+    .info-container{
+    width: 100%;
+    padding: 20px 0 0;
+
+      p{
+        font-size: 16px;
+      }
+
+      form{
+      width: 100%;
+      }
+
+      .name-container{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .info{
+          outline: none;
+          width: 160px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          border-bottom: 2px solid #a5a5a5;
+          font-size: 16px;
+          cursor: not-allowed;
+
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          p{
+            cursor: not-allowed;
+            margin:20px 0 0;
+            color: #858585;
+          }
+        }
+      }
+      .input{
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+        input{
+          outline: none;
+
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          width: 160px;
+          border-bottom: 2px solid #009245;
+          font-size: 16px;
+          color: #000000;
+          margin:20px 0 0;
+
+          &::placeholder{
+            color: #026831;
+          }
+        }
+      }
+
+      .button-container{
+        display: flex;
+
+        justify-content: center;
+
+        width: 100%;
+        padding: 50px 0 0;
+      }
+
+    }
+
+  }
+}

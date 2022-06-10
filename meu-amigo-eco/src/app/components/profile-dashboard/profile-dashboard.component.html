@@ -1,0 +1,33 @@
+<div class="dashboard-container" *ngIf="user$ | async as user">
+  <div class="container-template">
+    <h1>Perfil do usuário</h1>
+    <div class="profile-image">
+      <img width="200" height="200" [src]="user.photoURL ?? '../../../assets/profile-picture-icons/profile-planet.svg'">
+      <div class="pencil-button" (click)="inputField.click()">
+        <i class=" bi bi-pencil-fill"></i>
+      </div>
+    </div>
+    <input #inputField type="file" hidden (change)="uploadImage($event, user)">
+    <p class="exp-display">{{user.exp}} XP</p>
+    <div class="info-container">
+
+      <div class="name-container">
+        <div class="info">
+          <p>{{user.firstName}}</p>
+        </div>
+        <div class="info">
+          <p>{{user.lastName}}</p>
+        </div>
+      </div>
+      <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+        <div class="input">
+          <input type="text" placeholder="Apelido" formControlName="displayName">
+        </div>
+        <div class="button-container">
+          <button class="button default-button-size" type="submit">SALVAR ALTERAÇÃO</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

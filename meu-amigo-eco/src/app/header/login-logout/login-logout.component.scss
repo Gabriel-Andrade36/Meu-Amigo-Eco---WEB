@@ -1,0 +1,42 @@
+
+.login-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .signup{
+    padding:12px 20px;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 500;
+
+    p{color: #fff;}
+
+    &:hover{
+      cursor: pointer;
+      p{
+        transition: all 1s;
+        text-decoration: 1px underline;
+      }
+    }
+  }
+
+  .login{
+    display: flex;
+    padding:10px 20px;
+    justify-content: center;
+    align-items: center;
+    p{
+      padding: 0 0 0 0;
+      font-size: 17px;
+      color: white;
+      font-weight:500;
+    }
+    i{
+      padding: 0 0 0 5px;
+      font-size:27px;
+      color: white;
+      font-weight: 500;
+    }
+  }
+}

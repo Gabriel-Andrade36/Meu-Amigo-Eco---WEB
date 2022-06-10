@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "meu-amigo-eco:build:production",
+            "firebaseProject": "meu-amigo-eco",
+            "firebaseHostingSite": "meu-amigo-eco"
+          }
         }
       }
     }
