@@ -107,13 +107,7 @@ color:#2db16b ;
 }
 
 .big-button-with-icon{
-  p{
 
-  }
-
-  i{
-
-  }
 }
 
 .button-disable{
@@ -122,8 +116,9 @@ color:#2db16b ;
 
   &:hover{
     cursor: not-allowed;
-    background-color: #2e9e62e3;
+    background-color: rgba(46, 158, 98, 0);
     color: rgba(247, 247, 247, 0.897);
+
   }
 }
 

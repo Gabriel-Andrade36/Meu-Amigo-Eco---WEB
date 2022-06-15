@@ -9,9 +9,11 @@
 .learn-area{
   box-sizing: border-box;
   background-color: #012346;
-  background-image: url(../../../assets/backgrounds/stacked-peaks-green.svg);
+  background-image: url(../../../assets/background-imgs/stacked-peaks-green.svg);
+  background-size: auto 100%;
   width: 100vw;
-  height: 650px;
+  min-height: 650px;
+  height: 30vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;

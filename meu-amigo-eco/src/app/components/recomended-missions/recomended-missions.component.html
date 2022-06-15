@@ -6,9 +6,15 @@
   <img src="../../../assets/fun-icons/handy-yellow-paper-airplane.png" alt="" class="decoration5">
 
   <div class="content">
+    <div class="text">
+      <h2>Realize missões recomendadas</h2>
+      <p>Com o conhecimento adqurido nas eco-aulas realize nossas missões recomendadas fora do computador e volte aqui
+        para resgatar seus pontos de experiência.</p>
+      <p>Todas as suas atividades recomendadas realizadas ficam armazenadas no seu histórico logo abaixo!</p>
+    </div>
     <div class="recomended-missions-container" *ngIf="user$ | async as user">
       <h2>Missões recomendadas</h2>
-      <div *ngIf="recomendedActivities.length != 0; else noRecomendedActivities">
+      <ng-container *ngIf="recomendedActivities.length != 0; else noRecomendedActivities">
         <div *ngFor="let item of recomendedActivities; let i = index">
           <div class="recomended-mission" *ngIf="i <= 2">
             <h3>{{item.title}}</h3>
@@ -21,12 +27,14 @@
             </div>
           </div>
         </div>
-      </div>
-      <p class="alert">Realize estas atividades fora do computador e depois adicione-as para ganhar pontos!</p>
+        <p class="alert">Realize estas atividades fora do computador e depois adicione-as para ganhar pontos!</p>
+      </ng-container>
 
       <ng-template #noRecomendedActivities>
-        <p>Parabéns, você completou todas as atividades recomedadas! volte mais tarde para realizar novas
-          atividades</p>
+        <div id="noActivities">
+          <p>Parabéns, você completou todas as atividades recomedadas! volte mais tarde para realizar novas
+            atividades</p>
+        </div>
       </ng-template>
     </div>
 
