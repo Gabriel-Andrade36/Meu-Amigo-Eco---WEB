@@ -59,8 +59,10 @@
     .text{
       position: relative;
       z-index: 4;
-      width: 300px;
       text-shadow: 2px 2px 4px rgb(0, 0, 0);
+
+      min-width: 300px;
+      width: 30vw;
       margin: 24px 50px 0 0;
 
       h2{
@@ -86,9 +88,6 @@
         display: flex;
 
       }
-
-      min-width: 300px;
-      width: 30vw;
     }
   }
 
