@@ -4,57 +4,134 @@
 // backkground-color: #3FD987;
 // backkground-color: #3AF08F;
 // backkground-color: #37E688;
-.background{
+
+.container-test{
+
+
+  width: 100%;
+  padding: 60px 0;
+}
+
+.content-test{
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+
+
+
+
+.default-container{
+  width: 100%;
+  margin: 0 auto;
+  height: 500px;
+}
+
+.recomended-missions-container-new{
   background-image: url(../../../assets/background-imgs/layered-waves-blue-no-bg.svg);
   background-color: #001220;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.default-content-container{
+  width: 1171px;
+  padding:100px 0;
+}
+
+
+.recomended-missions{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.background{
+
   box-sizing: border-box;
-  display:flex;
-  flex-direction: column;
-  padding: 80px 15px 0;
-  width: 100vw;
+
+  background-size: auto 100%;
   max-width: 100vw;
+  width: 100vw;
   min-height: 700px;
   height:35vh;
-  background-size: auto 100%;
+
+  display:flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   position: relative;
 
-  .decoration1{
-    position: absolute;
-    width: 150px;
-    left: 5px;
-    bottom:300px;
-  }
-  .decoration2{
-    position: absolute;
-    width: 110px;
-    left: 230px;
-    bottom:550px;
-  }
-  .decoration3{
-    position: absolute;
-    width: 90px;
-    left: 450px;
-    bottom:450px;
-  }
-  .decoration4{
-    position: absolute;
-    width: 90px;
-    left: 300px;
-    bottom:150px;
-  }
-  .decoration5{
-    position: absolute;
-    width: 120px;
-    left: 420px;
-    bottom:250px;
-  }
 
   .content{
+    .decoration1{
+      position: absolute;
+      width: 100px;
+      left: 80px;
+      bottom:65px;
+    }
+    .decoration2{
+      position: absolute;
+      width: 85px;
+      left: 200px;
+      top:-5px;
+    }
+    .decoration3{
+      position: absolute;
+      width: 90px;
+      left: -120px;
+      bottom:105px;
+    }
+    .decoration4{
+      position: absolute;
+      width: 60px;
+      left: 250px;
+      bottom:120px;
+    }
+    .decoration5{
+      position: absolute;
+      width: 50px;
+      left: 420px;
+      top:-20px;
+    }
+    .earth-character{
+      position: absolute;
+      // visibility: hidden;
+      width: 200px;
+      left: 310px;
+      bottom:-100px;
+      z-index: 0;
+    }
+
     display: flex;
     justify-content: center;
     align-items:flex-start;
+    margin: auto;
+    position: relative;
+
+    max-width: 1170px;
+    width: 100%;
 
     .text{
       position: relative;
@@ -62,20 +139,20 @@
       text-shadow: 2px 2px 4px rgb(0, 0, 0);
 
       min-width: 300px;
-      width: 30vw;
+      width: 45%;
       margin: 24px 50px 0 0;
 
       h2{
         font-size: 25px;
         text-transform: uppercase;
-        color:#fff;
+        color:rgb(0, 0, 0);
         margin: 0 0 30px;
 
       }
 
       p{
         font-size: 17px;
-        color:#fff;
+        color:rgb(0, 0, 0);
         font-weight: 400;
         margin: 0 0 15px 0;
         text-shadow:
@@ -84,32 +161,23 @@
         1px 1px 5px rgba(0, 0, 0, 0.521),
         -1px -1px 5px rgba(0, 0, 0, 0.589)
         ;
-        // background-color: #00000041;
         display: flex;
-
       }
     }
-  }
 
-  .earth-character{
-    position: absolute;
-    width: 250px;
-    right: 800px;
-    bottom:8vh;
-    z-index: 0;
   }
 
   .recomended-missions-container{
     position: relative;
-    box-shadow: 7px 7px 3px #0108115d;
-    min-height: 345.23px;
-    background-color: #01213be1;
+    // box-shadow: 7px 7px 3px #0108115d;
+    min-height: 300px;
+    background-color: none;
     width: 650px;
     height: fit-content;
     position: relative;
     z-index: 1;
     border-radius: 5px;
-    padding: 20px;
+    padding: 20px 0;
     font-family: 'Inconsolata', monospace;
 
     h2{
@@ -118,10 +186,11 @@
       color:#3a93ff;
       font-weight: 800;
       text-transform: uppercase;
-      text-shadow: 1px 1px 4px#000000;
+      // text-shadow: 1px 1px 4px#000000;
+      margin: 0 0 30px;
     }
     p{
-      color: #fff;
+      color: rgb(0, 0, 0);
     }
 
     .recomended-mission{
@@ -129,16 +198,14 @@
       font-weight: 300;
       font-family: 'Inconsolata', monospace;
       padding: 5px 10px 0;
-      margin:5px 0 0;
+      margin:3px 0 0;
+      height: 62px;
       border-style: unset;
       border:2px solid #011125;
       border-color: #0b43868a;
       border-radius: 4px;
       box-shadow: 2px 2px 6px #0000007e;
-
-
-
-
+      background-color: rgba(0, 140, 255, 0.068);
         .xp{
           color: rgb(0, 0, 0);
         }
@@ -169,7 +236,7 @@
           width: 80%;
           font-size: 15px;
           font-weight: 300;
-          text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.308);
+          // text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.308);
           text-transform: lowercase;
         }
         &__add-button{
@@ -179,7 +246,7 @@
           font-weight: 400;
           font-size: 29px;
 
-          color: white;
+          color: rgb(0, 0, 0);
           border-radius:100px;
           border: 2px solid #517fb6;
           width: 23px;
@@ -187,7 +254,7 @@
 
           &:hover{
             background-color: #517fb6;
-            color: white;
+            color: rgb(0, 0, 0);
             transition: all 0.3s;
             cursor: pointer;
           }
@@ -198,17 +265,6 @@
         background-color: #001c33;
       }
     }
-
-
-
-
-
-
-
-
-
-
-
   .alert{
     position: absolute;
     width: 100%;
@@ -220,12 +276,8 @@
     font-weight: 500;
     font-size:16px;
   }
-
-
-
 }
 }
-
 #noActivities{
 display: flex;
 justify-content: center;
@@ -234,6 +286,6 @@ margin: 100px 0 0;
     p{
       font-size: 17px;
       text-align: center;
-      color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
     }
 }

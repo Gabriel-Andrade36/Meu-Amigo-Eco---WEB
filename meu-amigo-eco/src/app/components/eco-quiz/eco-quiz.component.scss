@@ -1,11 +1,12 @@
 .card-container{
   height: fit-content;
-  width: 320px;
-  background-color: #014d44b9;
+  width: 280px;
+  background: -webkit-linear-gradient(271deg, #ff00e0 -33%, #05082C 43%, #050820 79%);
+
   padding: 40px 15px 50px;
   border-radius: 4px;
   margin: 3px 12px 3px 0;
-  box-shadow: 7px 7px 3px #005a4e69;
+  box-shadow: 4px 4px 3px #0a00003b;
 
   .img-container{
     display: flex;
@@ -45,10 +46,9 @@
     }
   }
 
-
   &:hover{
-    margin: 0px 12px 6px 0;
-    box-shadow: 7px 10px 3px #005a4e69;
+    transition: all 1s;
+    background-image: linear-gradient(180deg, #d269fc -45%,#ff00b3 -33%, #05082C 43%, #050820 79%);
     cursor: pointer;
   }
 }
